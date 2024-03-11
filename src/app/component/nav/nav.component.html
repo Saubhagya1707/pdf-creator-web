@@ -1,0 +1,19 @@
+<div>
+  <nav>
+    <div class="container">
+      <a>PdfGenerator</a>
+      <ul class="links">
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a href="https://github.com/saubhagya1707/pdf-creator-web.git">Git</a></li>
+      </ul>
+      <div class="buttons">
+        <button type="button" >SignUp</button>
+        <button type="button" (click)="onLogin()">LogIn</button>
+      </div>
+    </div>
+  </nav>
+  <div class="body">
+    <router-outlet></router-outlet>
+  </div>
+</div>
