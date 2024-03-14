@@ -1,18 +1,26 @@
-<div>
-  <nav>
-    <div class="container">
-      <a>PdfGenerator</a>
-      <ul class="links">
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/about">About</a></li>
-        <li><a href="https://github.com/saubhagya1707/pdf-creator-web.git">Git</a></li>
-      </ul>
+<div class="main">
+  <mat-toolbar color="primary">
+      <span class="app-name">PdfGenerator</span>
+      <span class="spacer"></span>
+      <button mat-icon-button >
+        <mat-icon>home</mat-icon>
+      </button>
+      <button mat-icon-button >
+        <mat-icon>info</mat-icon>
+      </button>
+      <button mat-icon-button  href="https://github.com/saubhagya1707/pdf-creator-web.git">
+        <mat-icon>github</mat-icon>
+      </button>
+<!--      <ul class="links">-->
+<!--        <li><a routerLink="/" mat-raised-button>Home</a></li>-->
+<!--        <li><a routerLink="/about" mat-raised-button>About</a></li>-->
+<!--        <li><a href="https://github.com/saubhagya1707/pdf-creator-web.git" mat-raised-button>Git</a></li>-->
+<!--      </ul>-->
       <div class="buttons">
-        <button type="button" >SignUp</button>
-        <button type="button" (click)="onLogin()">LogIn</button>
+        <button mat-raised-button routerLink="/signup">SignUp</button>
+        <button mat-raised-button (click)="onLogin()">LogIn</button>
       </div>
-    </div>
-  </nav>
+  </mat-toolbar>
   <div class="body">
     <router-outlet></router-outlet>
   </div>

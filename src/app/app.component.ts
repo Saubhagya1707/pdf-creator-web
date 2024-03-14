@@ -4,6 +4,7 @@ import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 import {MatIcon} from "@angular/material/icon";
 import {NavComponent} from "./component/nav/nav.component";
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
