@@ -17,8 +17,13 @@
 <!--        <li><a href="https://github.com/saubhagya1707/pdf-creator-web.git" mat-raised-button>Git</a></li>-->
 <!--      </ul>-->
       <div class="buttons">
-        <button mat-raised-button routerLink="/signup">SignUp</button>
-        <button mat-raised-button (click)="onLogin()">LogIn</button>
+       <ng-container *ngIf="isLoggedIn(); else loggedOut">
+         <button mat-raised-button (click)="onLogOut()">LogOut</button>
+       </ng-container>
+        <ng-template #loggedOut>
+          <button mat-raised-button routerLink="/signup">SignUp</button>
+          <button mat-raised-button (click)="onLogin()">LogIn</button>
+        </ng-template>
       </div>
   </mat-toolbar>
   <div class="body">

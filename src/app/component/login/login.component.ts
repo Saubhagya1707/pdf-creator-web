@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {AuthService} from "../../service/auth.service";
 import {SessionService} from "../../service/session.service";
@@ -6,6 +6,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -20,12 +21,15 @@ import {MatCardModule} from "@angular/material/card";
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements OnDestroy{
 
   email: string = ''
   password: string = ''
 
-  constructor(private _authService: AuthService, private sessionService: SessionService) {
+  constructor(private _authService: AuthService, private sessionService: SessionService,private router:Router) {
+  }
+
+  ngOnDestroy(): void {
   }
 
   login() {
@@ -36,7 +40,7 @@ export class LoginComponent {
         console.error(err);
       },
       () => {
-
+        this.router.navigate(["home"]);
       });;
   }
 

@@ -4,11 +4,15 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatIcon} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import {SessionService} from "../../service/session.service";
+import {CommonModule} from "@angular/common";
+import {AuthService} from "../../service/auth.service";
 
 @Component({
   selector: 'app-nav',
   standalone: true,
   imports: [
+    CommonModule,
     RouterLink,
     RouterOutlet,
     MatToolbarModule,
@@ -21,9 +25,17 @@ import {MatButtonModule} from "@angular/material/button";
 })
 export class NavComponent {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private sessionService: SessionService, private authService:AuthService) {
   }
   onLogin() {
-    this.router.navigate(["login"])
+    this.router.navigate(["login"]);
+  }
+
+  onLogOut() {
+    this.sessionService.logOut();
+  }
+
+  isLoggedIn() {
+    return this.sessionService.isLoggedIn();
   }
 }
