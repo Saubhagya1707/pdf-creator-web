@@ -1,0 +1,40 @@
+.container{
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+}
+.card {
+  padding: 10%;
+  .card-header {
+    margin-bottom: 50px;
+    justify-content: center;
+    span{
+      font-size: xx-large;
+    }
+  }
+  .card-body {
+    textarea{
+      height: 15rem;
+      width: 30rem;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: none;
+      transition: box-shadow 1s ease;
+    }
+    textarea:hover {
+      animation: shadow-pulse 1s infinite alternate;
+    }
+    @keyframes shadow-pulse {
+      0% {
+        box-shadow: none;
+      }
+      100% {
+        box-shadow: 0 0 50px indigo;
+      }
+    }
+  }
+  .card-footer{
+    margin: 2%;
+    justify-content: center;
+  }
+}

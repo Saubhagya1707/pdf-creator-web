@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div class="container">
+  <mat-card class="card">
+    <mat-card-header class="card-header">
+      <span>
+        Let's create a template!
+      </span>
+    </mat-card-header>
+    <mat-card-content class="card-body">
+      <textarea matInput type="text" [(ngModel)]="inputText"></textarea>
+    </mat-card-content>
+    <mat-card-actions class="card-footer">
+      <button mat-raised-button (click)="onGenerate()">Create</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
